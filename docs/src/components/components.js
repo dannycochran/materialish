@@ -3,6 +3,8 @@ import buttonCodeUrl from './examples/button.txt';
 import buttonReadmeUrl from './readmes/button-readme.md';
 import checkboxCodeUrl from './examples/checkbox.txt';
 import checkboxReadmeUrl from './readmes/checkbox-readme.md';
+import chipCodeUrl from './examples/chip.txt';
+import chipReadmeUrl from './readmes/chip-readme.md';
 
 export default [
   {
@@ -27,5 +29,16 @@ export default [
     readmeUrl: checkboxReadmeUrl,
     materialDocsLink:
       'https://material.io/develop/web/components/input-controls/checkboxes/',
+  },
+  {
+    name: 'Chip',
+    url: '/chip',
+    componentKey: 'chip',
+    description:
+      'Chips are compact elements that represent an input, attribute, or action.',
+    component: ComponentDoc,
+    exampleUrl: chipCodeUrl,
+    readmeUrl: chipReadmeUrl,
+    materialDocsLink: 'https://material.io/design/components/chips.html',
   },
 ];

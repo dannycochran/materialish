@@ -1,0 +1,9 @@
+class ChipExample extends Component {
+  render () {
+    return (
+      <Chip>I am a chip</Chip>
+    );
+  }
+}
+
+return <ChipExample />;

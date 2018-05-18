@@ -1,0 +1,162 @@
+.mt-chip {
+  --_mt-chip-backgroundColor: var(--mt-chip-backgroundColor, #c7c6c6);
+  --_mt-chip-textColor: var(--mt-chip-textColor, #7e7d7d);
+  --_mt-chip-activeBackgroundColor: var(
+    --mt-chip-activeBackgroundColor,
+    #eaf6ff
+  );
+  --_mt-chip-activeTextColor: var(
+    --mt-chip-activeTextColor,
+    var(--mt-mainColor, #2196f3)
+  );
+
+  font-size: var(--mt-baseFontSize, 1rem);
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 1em;
+  color: var(--_mt-chip-textColor);
+  padding: 0.45em 0.8em;
+  cursor: pointer;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-width: 5em;
+  overflow: hidden;
+  z-index: 0;
+  outline: none;
+}
+
+.mt-chip:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--_mt-chip-activeBackgroundColor);
+  z-index: -1;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 0.2s ease-out;
+}
+
+.mt-chip:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--_mt-chip-backgroundColor);
+  opacity: 0.6;
+  will-change: opacity;
+  z-index: -1;
+  transition: opacity 0.2s ease-out;
+}
+
+.mt-chip:hover:after {
+  opacity: 0.8;
+}
+
+.mt-chip:focus:after {
+  opacity: 1;
+}
+
+.mt-chip-outlined {
+  border: 1px solid var(--_mt-chip-backgroundColor);
+}
+
+.mt-chip-outlined:after {
+  opacity: 0;
+}
+
+.mt-chip-outlined:hover:after {
+  opacity: 0.2;
+}
+
+.mt-chip-active {
+  color: var(--_mt-chip-activeTextColor);
+}
+
+.mt-chip-active:before {
+  opacity: 1;
+}
+
+.mt-chip-active:after {
+  opacity: 0;
+}
+
+.mt-chip-active:hover:after {
+  background-color: #000;
+  opacity: 0.05;
+}
+
+.mt-chip-outlined.mt-chip-active {
+  border: 1px solid var(--_mt-chip-activeTextColor);
+}
+
+.mt-chip-outlined.mt-chip-active:before {
+  opacity: 0;
+}
+
+.mt-chip-outlined.mt-chip-active:after {
+  background-color: var(--_mt-chip-activeBackgroundColor);
+}
+
+.mt-chip-outlined.mt-chip-active:hover:after {
+  opacity: 0.7;
+}
+
+.mt-chip-closeable {
+  padding-right: 2em;
+}
+
+.mt-chip_close {
+  position: absolute;
+  top: calc(50% - 0.7em);
+  right: 0.4em;
+  z-index: 1;
+  display: inline-block;
+  outline: none;
+  border: none;
+  width: 1.4em;
+  height: 1.4em;
+  background-color: var(--_mt-chip-textColor);
+  border-radius: 100%;
+  cursor: pointer;
+  opacity: 0.85;
+  will-change: opacity;
+  transition: opacity 0.2s ease-in-out;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-chip_close:after {
+  content: '\00d7';
+  color: var(--_mt-chip-backgroundColor);
+  font-size: 1.3em;
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.mt-chip-active .mt-chip_close:after {
+  color: var(--_mt-chip-activeBackgroundColor);
+}
+
+.mt-chip-outlined .mt-chip_close:after {
+  color: #eee;
+}
+
+.mt-chip_close:hover,
+.mt-chip_close:focus {
+  opacity: 1;
+}
+
+.mt-chip-active .mt-chip_close {
+  background-color: var(--_mt-chip-activeTextColor);
+}
