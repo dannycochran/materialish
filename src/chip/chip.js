@@ -10,11 +10,16 @@ class Chip extends Component {
       onCloseClick,
       ...props
     } = this.props;
+
+    const isClickable = !!props.onClick;
+
     return (
       <div
-        className={`mt-chip ${active ? 'mt-chip-active' : ''} ${
-          outlined ? 'mt-chip-outlined' : ''
-        } ${onCloseClick ? 'mt-chip-closeable' : ''} ${className}`}
+        className={`mt-chip ${isClickable ? 'mt-chip-clickable' : ''} ${
+          active ? 'mt-chip-active' : ''
+        } ${outlined ? 'mt-chip-outlined' : ''} ${
+          onCloseClick ? 'mt-chip-closeable' : ''
+        } ${className}`}
         {...props}>
         {children}
         {onCloseClick && (

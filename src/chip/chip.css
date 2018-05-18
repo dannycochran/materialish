@@ -17,7 +17,6 @@
   border-radius: 1em;
   color: var(--_mt-chip-textColor);
   padding: 0.45em 0.8em;
-  cursor: pointer;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -25,6 +24,11 @@
   overflow: hidden;
   z-index: 0;
   outline: none;
+  cursor: default;
+}
+
+.mt-chip-clickable {
+  cursor: pointer;
 }
 
 .mt-chip:before {
